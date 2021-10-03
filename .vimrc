@@ -14,6 +14,7 @@ set viminfo='20,\"50    " see http://vimdoc.sourceforge.net/htmldoc/options.html
 set expandtab     " use spaces, not tabs (type <ctrl-v TAB> to insert a real tab)
 set shiftwidth=2  " number of spaces to use for each step of indentation
 set tabstop=8     " real tab characters will be displayed as this wide
+set textwidth=79  " wrap text to this many chars when using the gq command
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 "if has('mouse')
