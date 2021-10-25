@@ -1,7 +1,13 @@
-" Fardan's ~/.gvimrc
-" Last updated 2012.06.19
-
+" Fardan's ~/.vim/gvimrc
 set guioptions-=T " hide toolbar
+set lines=40
+set columns=90
+
+if has("win32")
+  set gfn=ProFontWindows:h9,ProFont:h8
+else
+  set gfn=ProFont:h8,ProFontWindows:h9
+endif
 
 " Disable bold fonts in GUI.  From http://www.pixelbeat.org/settings/.gvimrc
 " Originally written by Steve Hall

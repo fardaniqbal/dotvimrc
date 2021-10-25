@@ -1,4 +1,4 @@
-" Fardan's ~/.vimrc
+" Fardan's ~/.vim/vimrc
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
   set fileencodings=utf-8,latin1
 endif
@@ -86,15 +86,4 @@ endif
 " The default directory for swap files is incorrect on Windows.
 if has("win32")
   set dir=$TEMP
-endif
-
-" GUI-specific settings.
-if has("gui")
-  if has("win32")
-    set gfn=ProFontWindows:h9,ProFont:h8
-  else
-    set gfn=ProFont:h8,ProFontWindows:h9
-  endif
-  set lines=40
-  set columns=90
 endif
