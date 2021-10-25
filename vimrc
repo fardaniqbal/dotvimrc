@@ -8,10 +8,11 @@ set bs=indent,eol,start " allow backspacing over everything in insert mode
 set incsearch           " do incremental searching
 set history=1000        " set maximum length of command line history
 set ruler               " always show cursor position
-set viminfo='20,\"50    " see http://vimdoc.sourceforge.net/htmldoc/options.html#'viminfo'
+set number              " show line numbers in left margin
 
 set expandtab     " use spaces, not tabs (type <ctrl-v TAB> to insert a real tab)
 set shiftwidth=2  " number of spaces to use for each step of indentation
+set softtabstop=2 " number of spaces to insert when hitting TAB
 set tabstop=8     " real tab characters will be displayed as this wide
 set textwidth=79  " wrap text to this many chars when using the gq command
 
@@ -22,8 +23,29 @@ set textwidth=79  " wrap text to this many chars when using the gq command
 
 " If terminal supports colors or if running in a GUI.
 if &t_Co > 2 || has("gui_running")
-  syntax on     " enable syntax highlighting
-  set hlsearch  " highlight the last used search pattern
+  syntax on       " enable syntax highlighting
+  set hlsearch    " highlight the last used search pattern
+  set cursorline  " hilight current line
+  set background=dark
+
+  " Uncomment one of the following lines to change color scheme:
+  "colorscheme solarized
+  "colorscheme desert
+  colorscheme default
+
+  " Customize colors.
+  hi LineNr ctermfg=darkgray guifg=darkgray
+  hi CursorLineNr term=NONE cterm=NONE gui=NONE
+  hi CursorLineNr ctermfg=yellow ctermbg=black guifg=yellow guibg=black
+  hi CursorLine term=NONE cterm=NONE gui=NONE
+  hi CursorLine ctermbg=black guibg=black
+
+  hi IncSearch cterm=inverse gui=inverse
+  hi IncSearch ctermfg=green ctermbg=black guifg=magenta guibg=black
+  hi Search cterm=inverse gui=inverse
+  hi Search ctermfg=magenta ctermbg=black guifg=magenta guibg=black
+  hi Visual cterm=inverse gui=inverse
+  hi Visual ctermfg=lightgray ctermbg=black guifg=lightgray guibg=black
 endif
 
 if &term=="xterm"
