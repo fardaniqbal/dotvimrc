@@ -89,3 +89,8 @@ endif
 if has("win32")
   set dir=$TEMP
 endif
+
+" Load local config if available.
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
