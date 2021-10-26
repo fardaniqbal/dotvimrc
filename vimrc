@@ -23,6 +23,12 @@ set textwidth=79  " wrap text to this many chars when using the gq command
 "  set mouse=a
 "endif
 
+if &term=="xterm"
+  set t_Co=16       " number of colors that the terminal supports
+  set t_Sb=[4%dm  " escape sequence to send for setting background color
+  set t_Sf=[3%dm  " escape sequence to send for setting foreground color
+endif
+
 " If terminal supports colors or if running in a GUI.
 if &t_Co > 2 || has("gui_running")
   syntax on       " enable syntax highlighting
@@ -48,12 +54,6 @@ if &t_Co > 2 || has("gui_running")
   hi Search ctermfg=magenta ctermbg=black guifg=magenta guibg=black
   hi Visual cterm=reverse gui=reverse
   hi Visual ctermfg=lightgray ctermbg=black guifg=lightgray guibg=black
-endif
-
-if &term=="xterm"
-  set t_Co=16       " number of colors that the terminal supports
-  set t_Sb=[4%dm  " escape sequence to send for setting background color
-  set t_Sf=[3%dm  " escape sequence to send for setting foreground color
 endif
 
 " If compiled with autocommand support.
