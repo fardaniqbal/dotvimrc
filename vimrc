@@ -9,6 +9,8 @@ set incsearch           " do incremental searching
 set history=1000        " set maximum length of command line history
 set ruler               " always show cursor position
 set number              " show line numbers in left margin
+set modelines=0         " prevent modeline security vulnurability
+set nomodeline
 
 set expandtab     " use spaces, not tabs (type <ctrl-v TAB> to insert a real tab)
 set shiftwidth=2  " number of spaces to use for each step of indentation
