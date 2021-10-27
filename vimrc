@@ -3,8 +3,8 @@ if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
   set fileencodings=utf-8,latin1
 endif
 
-set nocompatible        " use vim defaults (incompatible with "standard" vi)
-set bs=indent,eol,start " allow backspacing over everything in insert mode
+set nocompatible        " be vim (incompatible with "standard" vi)
+set bs=indent,eol,start " allow backspacing over everything
 set incsearch           " do incremental searching
 set history=200         " set maximum length of command line history
 set nobackup            " disable auto backups
@@ -28,8 +28,8 @@ set textwidth=79  " wrap text to this many chars when using the gq command
 
 if &term=="xterm"
   set t_Co=16       " number of colors that the terminal supports
-  set t_Sb=[4%dm  " escape sequence to send for setting background color
-  set t_Sf=[3%dm  " escape sequence to send for setting foreground color
+  set t_Sb=[4%dm  " escape sequence for setting background color
+  set t_Sf=[3%dm  " escape sequence for setting foreground color
 endif
 
 " If terminal supports colors or if running in a GUI.
@@ -38,27 +38,23 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch    " highlight the last used search pattern
   set cursorline  " hilight current line
   set background=dark
-
-  " Uncomment one of the following lines to change color scheme:
   colorscheme solarized
-  "colorscheme default
-  "colorscheme fiqbal-default
   colorscheme fiqbal-solarized
 endif
 
 " If compiled with autocommand support.
 if has("autocmd")
-  filetype plugin indent on   " file type detection, language-specific indenting
+  filetype plugin indent on " detect filetype, language-specific indenting
   augroup vimrcEx
     au!
-    " When opening a file, jump to the last known cursor position (if valid).
+    " When opening a file, jump to last known cursor position (if valid).
     autocmd BufReadPost *
       \ if line("'\"") > 1 && line("'\"") <= line("$") |
       \   exe "normal! g`\"" |
       \ endif
   augroup END
 else
-  set autoindent  " unconditionally enable autoindent if compiled w/o autocmds
+  set autoindent  " always enable autoindent if compiled w/o autocmds
 endif
 
 " Use cscope if available.
