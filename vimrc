@@ -6,13 +6,16 @@ endif
 set nocompatible        " use vim defaults (incompatible with "standard" vi)
 set bs=indent,eol,start " allow backspacing over everything in insert mode
 set incsearch           " do incremental searching
-set history=1000        " set maximum length of command line history
+set history=200         " set maximum length of command line history
+set nobackup            " disable auto backups
+set noswapfile          " disable swap files
 set ruler               " always show cursor position
 set number              " show line numbers in left margin
+set wildignorecase      " ignore case when TAB-completing file names
 set modelines=0         " prevent modeline security vulnurability
 set nomodeline
 
-set expandtab     " use spaces, not tabs (type <ctrl-v TAB> to insert a real tab)
+set expandtab     " use spaces, not tabs (<ctrl-v TAB> inserts a real tab)
 set shiftwidth=2  " number of spaces to use for each step of indentation
 set softtabstop=2 " number of spaces to insert when hitting TAB
 set tabstop=8     " real tab characters will be displayed as this wide
