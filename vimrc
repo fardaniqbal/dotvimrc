@@ -12,6 +12,7 @@ set noswapfile          " disable swap files
 set ruler               " always show cursor position
 set number              " show line numbers in left margin
 set wildignorecase      " ignore case when TAB-completing file names
+set wildmenu            " show matches for command line TAB-completion
 set modelines=0         " prevent modeline security vulnurability
 set nomodeline
 
