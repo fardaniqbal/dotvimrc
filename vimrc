@@ -20,7 +20,7 @@ set expandtab     " use spaces, not tabs (<ctrl-v TAB> inserts a real tab)
 set shiftwidth=2  " number of spaces to use for each step of indentation
 set softtabstop=2 " number of spaces to insert when hitting TAB
 set tabstop=8     " real tab characters will be displayed as this wide
-set textwidth=79  " wrap text to this many chars when using the gq command
+set textwidth=75  " wrap text to this many chars when using the gq command
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 "if has('mouse')
