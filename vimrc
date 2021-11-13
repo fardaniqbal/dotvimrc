@@ -26,9 +26,11 @@ set tabstop=8     " real tab characters will be displayed as this wide
 set textwidth=75  " wrap text to this many chars when using the gq command
 
 " In many terminal emulators the mouse works just fine, thus enable it.
-"if has('mouse')
-"  set mouse=a
-"endif
+if has('mouse_sgr')
+  set mouse=a ttymouse=sgr
+elseif has('mouse_xterm')
+  set mouse=a ttymouse=xterm2
+endif
 
 if &term=="xterm"
   set t_Co=16       " number of colors that the terminal supports
