@@ -25,7 +25,7 @@ set softtabstop=2 " number of spaces to insert when hitting TAB
 set tabstop=8     " real tab characters will be displayed as this wide
 set textwidth=75  " wrap text to this many chars when using the gq command
 
-" In many terminal emulators the mouse works just fine, thus enable it.
+" Enable mouse only if we have decent terminal support for it.
 if has('mouse_sgr')
   set mouse=a ttymouse=sgr
 elseif has('mouse_xterm')
