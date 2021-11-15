@@ -42,7 +42,7 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on       " enable syntax highlighting
   set hlsearch    " highlight the last used search pattern
-  set cursorline  " hilight current line
+  "set cursorline " hilight current line; !!! spikes cpu !!!
   set background=dark         " FIXME: should be in colors/<whatever>.vim,
   let g:solarized_termtrans=1 " but solarized colorscheme won't load from
   colorscheme solarized       " that file for some reason.
