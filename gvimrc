@@ -1,5 +1,6 @@
 " Fardan's ~/.vim/gvimrc
 set guioptions-=T " hide toolbar
+set guioptions-=r " hide scrollbar
 set lines=40
 set columns=90
 
