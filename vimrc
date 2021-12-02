@@ -43,9 +43,11 @@ if &t_Co > 2 || has("gui_running")
   syntax on       " enable syntax highlighting
   set hlsearch    " highlight the last used search pattern
   "set cursorline " hilight current line; !!! spikes cpu !!!
-  set background=dark         " FIXME: should be in colors/<whatever>.vim,
-  let g:solarized_termtrans=1 " but solarized colorscheme won't load from
-  colorscheme solarized       " that file for some reason.
+  if !has('mac')                " Solarized's transparent background mode in
+    let g:solarized_termtrans=1 " Terminal.app messes up color contrast.
+  endif                         " FIXME: these lines belong in
+  set background=dark           " colors/<whatever>.vim, but solarized won't
+  colorscheme solarized         " load from that file for some reason.
   colorscheme fiqbal-solarized
 endif
 

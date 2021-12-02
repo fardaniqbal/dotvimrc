@@ -1,5 +1,7 @@
+if !has('mac')                " Solarized's transparent background mode in
+  let g:solarized_termtrans=1 " Terminal.app messes up the color contrast
+endif                         " for some reason.
 set background=dark
-let g:solarized_termtrans=1
 runtime colors/solarized.vim " FIXME: why doesn't this line work?
 hi CursorLineNr cterm=NONE gui=NONE ctermfg=12
 hi MatchParen cterm=NONE ctermfg=black ctermbg=lightblue
