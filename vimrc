@@ -6,6 +6,8 @@ endif
 set nocompatible        " be vim (incompatible with "standard" vi)
 set bs=indent,eol,start " allow backspacing over everything
 set incsearch           " do incremental searching
+set ignorecase          " ignore case in searches and tags...
+set smartcase           " ...unless search query has upper-case chars
 set history=200         " set maximum length of command line history
 set hidden              " keep files open when switching to other files
 set nobackup            " disable auto backups
