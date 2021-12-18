@@ -40,6 +40,12 @@ if &term=="xterm"
   set t_Sf=[3%dm  " escape sequence for setting foreground color
 endif
 
+" Mac OS's terminfo files don't declare italic escapes, so define them.
+if has('unix') && system('uname -s') == "Darwin\n"
+  let &t_ZH="\e[3m"   " escape sequence for enabling italic
+  let &t_ZR="\e[23m"  " escape sequence for disabling italic
+endif
+
 " If terminal supports colors or if running in a GUI.
 if &t_Co > 2 || has("gui_running")
   syntax on       " enable syntax highlighting
