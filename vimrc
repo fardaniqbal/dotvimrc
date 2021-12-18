@@ -34,12 +34,6 @@ elseif has('mouse_xterm')
   set mouse=a ttymouse=xterm2
 endif
 
-if &term=="xterm"
-  set t_Co=16       " number of colors that the terminal supports
-  set t_Sb=[4%dm  " escape sequence for setting background color
-  set t_Sf=[3%dm  " escape sequence for setting foreground color
-endif
-
 " Mac OS's terminfo files don't declare italic escapes, so define them.
 if has('unix') && system('uname -s') == "Darwin\n"
   let &t_ZH="\e[3m"   " escape sequence for enabling italic
