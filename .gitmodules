@@ -4,3 +4,6 @@
 [submodule "pack/my-plugins/start/nord-vim"]
 	path = pack/my-plugins/start/nord-vim
 	url = git@github.com:arcticicestudio/nord-vim.git
+[submodule "pack/my-plugins/start/dracula"]
+	path = pack/my-plugins/start/dracula
+	url = git@github.com:dracula/vim.git
