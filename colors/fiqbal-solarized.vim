@@ -5,6 +5,8 @@ set background=dark
 runtime colors/solarized.vim
 hi CursorLineNr cterm=NONE gui=NONE ctermfg=12
 hi MatchParen cterm=NONE ctermfg=black ctermbg=lightblue
+hi StatusLine cterm=bold ctermfg=12 ctermbg=8
+hi StatusLineNC cterm=bold ctermfg=10 ctermbg=8
 
 if g:solarized_termtrans != 0
   " If transparent background, make line number margin transparent too.
