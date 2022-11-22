@@ -31,6 +31,12 @@ if v:version >= 900
   set wop=pum     " show completions in pop-up window
 endif
 
+if has('linebreak')
+  set linebreak       " soft-wrap text at word boundaries
+  set bri             " indent soft-wrapped lines to same level as BOL
+  let &sbr='└─▶︎ '     " mark soft-wrapped lines with this string
+endif
+
 " Enable mouse only if we have decent terminal support for it.
 if has('mouse_sgr')
   set mouse=a ttymouse=sgr
