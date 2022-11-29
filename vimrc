@@ -40,9 +40,9 @@ endif
 
 " Enable mouse only if we have decent terminal support for it.
 if has('mouse_sgr')
-  set mouse=a ttymouse=sgr
+  set mouse=nvi ttymouse=sgr  " nvi = hit ":" for terminal mouse selection
 elseif has('mouse_xterm')
-  set mouse=a ttymouse=xterm2
+  set mouse=nvi ttymouse=xterm2
 endif
 
 " Mac OS's terminfo files don't declare italic escapes, so define them.
