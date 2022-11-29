@@ -19,7 +19,7 @@ set showcmd             " show incomplete commands in command line
 set wildignorecase      " ignore case when TAB-completing file names
 set wildmenu            " show matches for command line TAB-completion
 set ttimeout            " time out after pressing ESC
-set ttimeoutlen=50      " be responsive when pressing ESC
+set ttimeoutlen=16      " be responsive when pressing ESC (milliseconds)
 set modelines=0         " prevent modeline security vulnurability
 set nomodeline
 
