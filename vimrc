@@ -14,6 +14,7 @@ set nobackup            " disable auto backups
 set noswapfile          " disable swap files
 set ruler               " always show cursor position
 set number              " show line numbers in left margin
+set scrolloff=0         " always show this many lines above/below cursor
 set showcmd             " show incomplete commands in command line
 set wildignorecase      " ignore case when TAB-completing file names
 set wildmenu            " show matches for command line TAB-completion
