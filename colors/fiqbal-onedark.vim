@@ -1,3 +1,5 @@
 set background=dark
+let g:onedark_termcolors=16
 runtime colors/onedark.vim
-hi Normal ctermbg=NONE
+hi Comment ctermfg=8
+hi LineNr ctermfg=8
