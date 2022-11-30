@@ -1,0 +1,1 @@
+../pack/my-plugins/start/oceanic-next/colors/OceanicNext.vim

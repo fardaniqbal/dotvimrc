@@ -1,0 +1,1 @@
+../pack/my-plugins/start/vim-one/colors/one.vim

@@ -1,0 +1,1 @@
+../pack/my-plugins/start/palenight.vim/colors/palenight.vim
