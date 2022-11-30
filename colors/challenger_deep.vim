@@ -1,0 +1,1 @@
+../pack/my-plugins/start/challenger-deep/colors/challenger_deep.vim
