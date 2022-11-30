@@ -19,3 +19,6 @@
 [submodule "pack/my-plugins/start/vim-one"]
 	path = pack/my-plugins/start/vim-one
 	url = https://github.com/rakr/vim-one
+[submodule "pack/my-plugins/start/challenger-deep"]
+	path = pack/my-plugins/start/challenger-deep
+	url = https://github.com/challenger-deep-theme/vim
