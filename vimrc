@@ -57,7 +57,7 @@ if &t_Co > 2 || has("gui_running")
   syntax on       " enable syntax highlighting
   set hlsearch    " highlight the last used search pattern
   "set cursorline " hilight current line; !!! spikes cpu !!!
-  colorscheme fiqbal-solarized
+  colorscheme fiqbal-challenger_deep
 endif
 
 " If compiled with autocommand support.
