@@ -14,7 +14,7 @@ hi Number     ctermfg=1
 hi Float      ctermfg=1
 hi Boolean    ctermfg=1
 
-hi MatchParen ctermfg=0     ctermbg=10
+hi MatchParen ctermfg=254   ctermbg=62
 hi Visual     ctermfg=254   ctermbg=62  " selected text
 hi IncSearch  ctermfg=0     ctermbg=11  " incremental search hilight
 hi Search     ctermfg=0     ctermbg=13  " general search hilight
