@@ -7,12 +7,13 @@ hi Operator   ctermfg=3     " e.g. for/while in C-like langs
 hi Statement  ctermfg=3     " e.g. if/else in C-like langs
 hi Type       ctermfg=1     " e.g. int/char/etc in C-like langs
 hi PreProc    ctermfg=5
-hi String     ctermfg=6
-hi Special    ctermfg=10    " escape chars in string literals
+hi String     ctermfg=10
+hi Special    ctermfg=6     " escape chars in string literals
 hi Constant   ctermfg=1
 hi Number     ctermfg=1
 hi Float      ctermfg=1
 hi Boolean    ctermfg=1
+hi Label      ctermfg=1
 
 hi MatchParen ctermfg=254   ctermbg=62
 hi Visual     ctermfg=254   ctermbg=62  " selected text
