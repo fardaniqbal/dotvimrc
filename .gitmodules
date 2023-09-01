@@ -1,12 +1,12 @@
 [submodule "pack/my-plugins/start/vim-colors-solarized"]
 	path = pack/my-plugins/start/vim-colors-solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "pack/my-plugins/start/nord-vim"]
 	path = pack/my-plugins/start/nord-vim
-	url = git@github.com:arcticicestudio/nord-vim.git
+	url = https://github.com/arcticicestudio/nord-vim.git
 [submodule "pack/my-plugins/start/dracula"]
 	path = pack/my-plugins/start/dracula
-	url = git@github.com:dracula/vim.git
+	url = https://github.com/dracula/vim.git
 [submodule "pack/my-plugins/start/oceanic-next"]
 	path = pack/my-plugins/start/oceanic-next
 	url = https://github.com/mhartington/oceanic-next
