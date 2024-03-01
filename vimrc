@@ -1,9 +1,6 @@
 " Fardan's ~/.vim/vimrc
-if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
-  set fileencodings=utf-8,latin1
-endif
-
 set nocompatible        " be vim (incompatible with "standard" vi)
+set encoding=utf-8      " internal char representation, _not_ file encoding
 set bs=indent,eol,start " allow backspacing over everything
 set incsearch           " do incremental searching
 set ignorecase          " ignore case in searches and tags...
