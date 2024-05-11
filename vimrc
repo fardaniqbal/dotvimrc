@@ -39,7 +39,9 @@ if has('linebreak')
 endif
 
 " Enable mouse only if we have decent terminal support for it.
-if has('mouse_sgr')
+if 1
+  set mouse=    " ...or just disable mouse entirely if it annoys you
+elseif has('mouse_sgr')
   set mouse=nvi ttymouse=sgr  " nvi = hit ":" for terminal mouse selection
 elseif has('mouse_xterm')
   set mouse=nvi ttymouse=xterm2
