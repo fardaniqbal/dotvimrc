@@ -15,10 +15,14 @@ set scrolloff=0         " always show this many lines above/below cursor
 set showcmd             " show incomplete commands in command line
 set wildignorecase      " ignore case when TAB-completing file names
 set wildmenu            " show matches for command line TAB-completion
-set ttimeout            " time out after pressing ESC
-set ttimeoutlen=16      " be responsive when pressing ESC (milliseconds)
+set ttimeout            " time out after pressing ESC; see also ttimeoutlen
 set modelines=0         " prevent modeline security vulnurability
 set nomodeline
+
+" Be responsive when pressing ESC (milliseconds).  XXX: values near 16 ms
+" (typical monitor refresh rate circa 2024) cause Heisenbug-ish problems
+" during Vim's startup under mintty/Windows.  Values >= 50 ms fix them.
+set ttimeoutlen=16
 
 set expandtab     " use spaces, not tabs (<ctrl-v TAB> inserts a real tab)
 set shiftwidth=2  " number of spaces to use for each step of indentation
@@ -26,7 +30,10 @@ set softtabstop=2 " number of spaces to insert when hitting TAB
 set tabstop=8     " real tab characters will be displayed as this wide
 set copyindent    " use indents from existing line for new indents
 set pi            " try to preserve existing indents on autoindent
-set textwidth=0   " wrap text to this many chars with the gq command (75)
+
+" Hard-wrap to this many cols with `gq` (set to 75 for 80-column terminal
+" minus 5-column line-number gutter, or 0 to disable auto hard-wrap).
+set textwidth=0
 
 if v:version >= 900
   set wop=pum     " show completions in pop-up window
