@@ -20,8 +20,9 @@ set modelines=0         " prevent modeline security vulnurability
 set nomodeline
 
 " Be responsive when pressing ESC (milliseconds).  XXX: values near 16 ms
-" (typical monitor refresh rate circa 2024) cause Heisenbug-ish problems
-" during Vim's startup under mintty/Windows.  Values >= 50 ms fix them.
+" (typical monitor refresh rate circa 2024) cause HeisenBUGs during Vim's
+" startup under mintty/Windows (https://en.wikipedia.org/wiki/Heisenbug).
+" Values >= 50 ms fix them.  TODO: figure out a better default than 16 ms.
 set ttimeoutlen=16
 
 set expandtab     " use spaces, not tabs (<ctrl-v TAB> inserts a real tab)
