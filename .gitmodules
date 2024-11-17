@@ -25,3 +25,6 @@
 [submodule "pack/my-plugins/start/vim-obsession"]
 	path = pack/my-plugins/start/vim-obsession
 	url = https://github.com/tpope/vim-obsession
+[submodule "pack/plugins/start/vim-tmux-navigator"]
+	path = pack/plugins/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
