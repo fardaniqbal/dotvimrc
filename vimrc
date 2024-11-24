@@ -23,7 +23,7 @@ set nomodeline
 " (typical monitor refresh rate circa 2024) cause HeisenBUGs during Vim's
 " startup under mintty/Windows (https://en.wikipedia.org/wiki/Heisenbug).
 " Values >= 50 ms fix them.  TODO: figure out a better default than 16 ms.
-set ttimeoutlen=16
+set ttimeoutlen=50
 
 set expandtab     " use spaces, not tabs (<ctrl-v TAB> inserts a real tab)
 set shiftwidth=2  " number of spaces to use for each step of indentation
@@ -55,52 +55,55 @@ elseif has('mouse_xterm')
   set mouse=nvi ttymouse=xterm2
 endif
 
-" Mac OS's terminfo files don't declare italic escapes, so define them.
-if has('unix') && system('uname -s') == "Darwin\n"
-  let &t_ZH="\e[3m"   " escape sequence for enabling italic
-  let &t_ZR="\e[23m"  " escape sequence for disabling italic
-endif
-
-" If terminal supports colors or if running in a GUI.
-if &t_Co > 2 || has("gui_running")
-  syntax on       " enable syntax highlighting
-  set hlsearch    " highlight the last used search pattern
-  "set cursorline " hilight current line; !!! spikes cpu !!!
-  colorscheme fiqbal-challenger_deep
-endif
-
-" If compiled with autocommand support.
-if has("autocmd")
-  filetype plugin indent on " detect filetype, language-specific indenting
-  augroup vimrcEx
-    au!
-    " When opening a file, jump to last known cursor position (if valid).
-    autocmd BufReadPost *
-      \ if line("'\"") > 1 && line("'\"") <= line("$") |
-      \   exe "normal! g`\"" |
-      \ endif
-  augroup END
-else
-  set autoindent  " always enable autoindent if compiled w/o autocmds
-endif
-
-" Use cscope if available.
-if has("cscope") && filereadable("/usr/bin/cscope")
-  set csprg=/usr/bin/cscope
-  set csto=0
-  set cst
-  set nocsverb
-  if filereadable("cscope.out")
-    cs add cscope.out   " add any database in current directory
-  elseif $CSCOPE_DB != ""
-    cs add $CSCOPE_DB   " else add database pointed to by environment
+" Ignore this section if running NeoVim.
+if !has('nvim')
+  " Mac OS's terminfo files don't declare italic escapes, so define them.
+  if has('unix') && system('uname -s') == "Darwin\n"
+    let &t_ZH="\e[3m"   " escape sequence for enabling italic
+    let &t_ZR="\e[23m"  " escape sequence for disabling italic
   endif
-  set csverb
-endif
 
-" The default directory for swap files is incorrect on Windows.
-if has("win32")
-  set dir=$TEMP
+  " If terminal supports colors or if running in a GUI.
+  if &t_Co > 2 || has("gui_running")
+    syntax on       " enable syntax highlighting
+    set hlsearch    " highlight the last used search pattern
+    "set cursorline " hilight current line; !!! spikes cpu !!!
+    colorscheme fiqbal-challenger_deep
+  endif
+
+  " If compiled with autocommand support.
+  if has("autocmd")
+    filetype plugin indent on " detect filetype, lang-specific indenting
+    augroup vimrcEx
+      au!
+      " When opening a file, jump to last known cursor position (if valid).
+      autocmd BufReadPost *
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
+    augroup END
+  else
+    set autoindent  " always enable autoindent if compiled w/o autocmds
+  endif
+
+  " Use cscope if available.
+  if has("cscope") && filereadable("/usr/bin/cscope")
+    set csprg=/usr/bin/cscope
+    set csto=0
+    set cst
+    set nocsverb
+    if filereadable("cscope.out")
+      cs add cscope.out   " add any database in current directory
+    elseif $CSCOPE_DB != ""
+      cs add $CSCOPE_DB   " else add database pointed to by environment
+    endif
+    set csverb
+  endif
+
+  " The default directory for swap files is incorrect on Windows.
+  if has("win32")
+    set dir=$TEMP
+  endif
 endif
 
 " Load local config if available.
