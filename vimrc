@@ -46,6 +46,11 @@ if has('linebreak')
   let &sbr='└─▶︎ '     " mark soft-wrapped lines with this string
 endif
 
+" Set <space> as leader key.
+nnoremap <SPACE> <Nop>
+map <Space> <Leader>
+map <Space> <LocalLeader>
+
 " Enable mouse only if we have decent terminal support for it.
 if 1
   set mouse=    " ...or just disable mouse entirely if it annoys you
@@ -105,6 +110,11 @@ if !has('nvim')
     set dir=$TEMP
   endif
 endif
+
+" Custom key bindings.
+nmap <leader>bn :bn<CR>
+nmap <leader>bp :bp<CR>
+nmap <leader>bd <Plug>Bclose
 
 " Load local config if available.
 if filereadable($HOME . "/.vimrc.local")
