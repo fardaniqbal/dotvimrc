@@ -16,6 +16,8 @@ set showcmd             " show incomplete commands in command line
 set wildignorecase      " ignore case when TAB-completing file names
 set wildmenu            " show matches for command line TAB-completion
 set ttimeout            " time out after pressing ESC; see also ttimeoutlen
+set laststatus=2        " always show statusline
+set noshowmode          " lightline plugin shows mode in statusline
 set modelines=0         " prevent modeline security vulnurability
 set nomodeline
 
@@ -73,6 +75,7 @@ if !has('nvim')
     syntax on       " enable syntax highlighting
     set hlsearch    " highlight the last used search pattern
     "set cursorline " hilight current line; !!! spikes cpu !!!
+    let g:lightline = { 'colorscheme': 'fiqbal_powerlineish', }
     colorscheme fiqbal-challenger_deep
   endif
 
