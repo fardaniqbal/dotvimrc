@@ -75,9 +75,31 @@ if !has('nvim')
     syntax on       " enable syntax highlighting
     set hlsearch    " highlight the last used search pattern
     "set cursorline " hilight current line; !!! spikes cpu !!!
-    let g:lightline = { 'colorscheme': 'fiqbal_powerlineish', }
-    " Use Unicode line-drawing glyph instead of ASCII pipe (│ vs |).
+
+    " Set up lightline.
+    let g:lightline = {
+      \   'colorscheme': 'fiqbal_powerlineish',
+      \   'active': {
+      \     'left': [ [ 'mode', 'paste' ], [ 'gitbranch' ],
+      \               [ 'readonly', 'filename' ] ]
+      \   },
+      \   'component_function': {
+      \     'gitbranch' : 'Lightline_GitBranch',
+      \     'filename'  : 'Lightline_Filename'
+      \   },
+      \ }
+    " 
+    function! Lightline_Filename()
+      let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+      return '𓃋 ' . filename . (&modified ? ' [+]' : '')
+    endfunction
+    function! Lightline_GitBranch()
+      let branch = gitbranch#name()
+      return branch == "" ? "" : ' ' . branch
+    endfunction
+    " Use Unicode box-drawing glyphs, not ASCII (│, ╱, ╲ vs |, /, \).
     let g:lightline.subseparator = { 'left': '│', 'right': '│' }
+    let g:lightline.separator = { 'left': ' ', 'right': '' }
     colorscheme fiqbal-challenger_deep
   endif
 
