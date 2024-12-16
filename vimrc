@@ -88,14 +88,13 @@ if !has('nvim')
       \     'filename'  : 'Lightline_Filename'
       \   },
       \ }
-    " 
     function! Lightline_Filename()
       let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
-      return '𓃋 ' . filename . (&modified ? ' [+]' : '')
+      return '⛬  ' . filename . (&modified ? ' [+]' : '')
     endfunction
     function! Lightline_GitBranch()
       let branch = gitbranch#name()
-      return branch == "" ? "" : ' ' . branch
+      return branch == "" ? "" : 'Ψ ' . branch
     endfunction
     " Use Unicode box-drawing glyphs, not ASCII (│, ╱, ╲ vs |, /, \).
     let g:lightline.subseparator = { 'left': '│', 'right': '│' }
