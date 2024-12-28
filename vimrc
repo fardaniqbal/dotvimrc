@@ -113,6 +113,15 @@ if !has('nvim')
         \   exe "normal! g`\"" |
         \ endif
     augroup END
+
+    " Automatically go into insert mode for terminal windows
+    augroup vimrcTerminal
+      au!
+      autocmd BufEnter,WinEnter *
+        \ if &buftype == 'terminal' |
+        \   exec 'normal! i' |
+        \ endif
+    augroup END
   else
     set autoindent  " always enable autoindent if compiled w/o autocmds
   endif
@@ -143,6 +152,14 @@ nmap <leader>bp :bp<CR>
 nmap <leader>bd <Plug>Bclose
 nmap <Bslash> :NERDTree<CR>
 nmap <leader><Bslash> :NERDTreeFocus<CR>
+tnoremap <Esc><Esc> <C-\><C-n>
+
+" Make vim-tmux-navigator work in terminal mode.
+tmap <silent> <C-h> <cmd>TmuxNavigateLeft<cr>
+tmap <silent> <C-j> <cmd>TmuxNavigateDown<cr>
+tmap <silent> <C-k> <cmd>TmuxNavigateUp<cr>
+tmap <silent> <C-l> <cmd>TmuxNavigateRight<cr>
+tmap <silent> <C-\> <cmd>TmuxNavigatePrevious<cr>
 
 " NERDTree tweaks.
 if v:version >= 900
